@@ -1,5 +1,6 @@
 package com.hardeylim.movlancer.framework
 
+import com.hardeylim.movlancer.usecase.UseCaseModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -8,7 +9,8 @@ import javax.inject.Singleton
 
 @Component(
     modules = [
-        AndroidInjectionModule::class
+        AndroidInjectionModule::class,
+        UseCaseModule::class
     ]
 )
 @Singleton
