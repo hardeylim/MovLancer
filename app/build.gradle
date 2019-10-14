@@ -26,6 +26,14 @@ android {
         jvmTarget = "1.8"
     }
     buildTypes {
+        debug{
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "GOOGLE_URL", project.googleUrl
+            buildConfigField "String", "MOVIES_DB_URL", project.moviesDbUrl
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
