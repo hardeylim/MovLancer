@@ -1,10 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
-
-apply plugin: 'androidx.navigation.safeargs'
 
 android {
     compileSdkVersion 29
@@ -34,15 +31,79 @@ android {
 }
 
 dependencies {
+    // Libraries
+    def apache_commons = "3.6"
+    def appcompat = "1.1.0"
+    def butterknife = "8.8.1"
+    def cardview = "1.0.0"
+    def constraint_layout_version = "1.1.3"
+    def core_ktx = "1.1.0-alpha04"
+    def crashlytics = "2.10.1"
+    def dagger = "2.24"
+    def databinding_compiler = "3.1.4"
+    def firebase_core = "17.2.0"
+    def firebase_firestore = "21.1.1"
+    def firebase_performance = "19.0.0"
+    def glide = "4.4.0"
+    def gson = "2.8.2"
+    def jackson = "2.2.1"
+    def joda = "2.10"
+    def lifecycle_version = "2.1.0"
+    def material = "1.0.0"
+    def mosbyMvp = "2.0.0"
+    def navigationVersion = "1.0.0-alpha03"
+    def okhttp = "3.3.1"
+    def play_service_ads = "18.2.0"
+    def retrofit = "2.1.0"
+    def retrofit_rx_java_adapter = "1.0.0"
+    def rx_android = "2.1.1"
+    def room_version = "1.1.1"
+    def sdp = "1.0.2"
+    def support_library_version = "28.0.0-alpha3"
+    def timber = "4.7.0"
+    def work_version = "1.0.1"
+
+    //Test Libraries
+    def junit_version = "4.12"
+    def assertj = "2.5.0"
+    def data_factory = "0.8"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
-    implementation 'com.google.android.material:material:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+    implementation "androidx.cardview:cardview:$cardview"
+    implementation "com.google.dagger:dagger:$dagger"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$retrofit_rx_java_adapter"
+    implementation "com.google.code.gson:gson:$gson"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp"
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.0'
+    implementation "org.apache.commons:commons-lang3:$apache_commons"
+    implementation "io.reactivex.rxjava2:rxandroid:$rx_android"
+    implementation "com.jakewharton.timber:timber:$timber"
+    implementation "com.hannesdorfmann.mosby:mvp:$mosbyMvp"
+//    implementation "com.google.firebase:firebase-firestore:$firebase_firestore"
+//    implementation "com.google.firebase:firebase-core:$firebase_core"
+//    implementation "joda-time:joda-time:$joda"
+//    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "com.intuit.sdp:sdp-android:$sdp"
+    implementation "com.google.android.material:material:$material"
+    implementation "android.arch.work:work-runtime-ktx:$work_version"
+    implementation "com.crashlytics.sdk.android:crashlytics:$crashlytics"
+//    implementation "com.google.firebase:firebase-perf:$firebase_performance"
+//    implementation "com.google.firebase:firebase-ads:$play_service_ads"
+
+    implementation("com.google.dagger:dagger-android-support:$dagger") {
+        exclude group: 'com.google.code.findbugs'
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
+
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+    kapt "com.google.dagger:dagger-android-processor:$dagger"
+    kapt "com.android.databinding:compiler:$databinding_compiler"
 }
