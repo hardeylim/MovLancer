@@ -32,6 +32,7 @@ android {
 
             buildConfigField "String", "GOOGLE_URL", project.googleUrl
             buildConfigField "String", "MOVIES_DB_URL", project.moviesDbUrl
+            buildConfigField "String", "IMAGE_BASE_URL", project.imageBaseUrl
         }
 
         release {
