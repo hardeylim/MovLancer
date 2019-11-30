@@ -6,4 +6,7 @@ class Constants {
         const val MOVIES_DB = "MoviesDB"
     }
 
+    object RecyclerSettings {
+        const val columns = 2
+    }
 }
