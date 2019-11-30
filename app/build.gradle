@@ -93,6 +93,9 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
     implementation "androidx.cardview:cardview:$cardview"
     implementation "com.google.dagger:dagger:$dagger"
+    // Glide dependency
+    implementation "com.github.bumptech.glide:glide:$glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide"
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit"
     implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$retrofit_rx_java_adapter"
