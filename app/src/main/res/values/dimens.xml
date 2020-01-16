@@ -1,3 +1,7 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+
+    <!--  Popular Movies -->
+    <dimen name="grid_round_corner">@dimen/_20sdp</dimen>
+    <dimen name="popular_movies_recycler_item_padding">@dimen/_10sdp</dimen>
 </resources>
