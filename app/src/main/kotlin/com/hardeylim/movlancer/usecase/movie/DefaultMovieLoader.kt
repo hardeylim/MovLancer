@@ -2,6 +2,8 @@ package com.hardeylim.movlancer.usecase.movie
 
 import com.hardeylim.movlancer.usecase.internet.InternetChecker
 import com.hardeylim.movlancer.usecase.api.MoviesApi
+import com.hardeylim.movlancer.usecase.movie.model.PopularMoviesDto
+import io.reactivex.Single
 import io.reactivex.annotations.SchedulerSupport
 import javax.inject.Inject
 
@@ -13,7 +15,7 @@ internal constructor(
 ) : MovieLoader {
 
     @SchedulerSupport(SchedulerSupport.IO)
-    override fun getPopularMovies(apiKey: String) =
+    override fun getPopularMovies(apiKey: String): Single<PopularMoviesDto> =
         internetChecker.checkInternet()
             .andThen(moviesApi.getPopular(apiKey))
 }
