@@ -59,9 +59,13 @@ class DtoToPopularMoviesMapper :
         movie.video = dto.video
         movie.posterPath = buildImageUrl(dto.posterPath)
         movie.voteAverage = dto.voteAverage
+        movie.rating = setRating(dto)
         movie.voteCount = dto.voteCount
         return movie
     }
+
+    private fun setRating(dto: MovieDto) =
+        dto.voteAverage.div(2).toFloat()
 
     private fun buildImageUrl(url: String): String = IMAGE_BASE_URL+"original"+url
 }

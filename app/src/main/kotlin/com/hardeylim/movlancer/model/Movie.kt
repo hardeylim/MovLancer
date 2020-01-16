@@ -27,6 +27,7 @@ data class Movie(
         var title: String = "", // Hustlers
         @SerializedName("vote_average")
         var voteAverage: Double = 0.0, // 6.2
+        var rating: Float = 0F, // voteAverage/2
         @SerializedName("overview")
         var overview: String = "", // A crew of savvy former strip club employees band together to turn the tables on their Wall Street clients.
         @SerializedName("release_date")
