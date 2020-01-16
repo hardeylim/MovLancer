@@ -1,6 +1,7 @@
 package com.hardeylim.movlancer.framework
 
 import com.hardeylim.movlancer.feature.FeatureModule
+import com.hardeylim.movlancer.framework.rx.RxUtilityModule
 import com.hardeylim.movlancer.usecase.UseCaseModule
 import dagger.BindsInstance
 import dagger.Component
@@ -12,6 +13,7 @@ import javax.inject.Singleton
     modules = [
         AndroidInjectionModule::class,
         FeatureModule::class,
+        RxUtilityModule::class,
         UseCaseModule::class
     ]
 )
