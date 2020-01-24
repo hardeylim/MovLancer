@@ -26,8 +26,7 @@
             android:layout_height="wrap_content"
             style="?android:attr/ratingBarStyleIndicator"
             android:numStars="5"
-            android:rating="@{movie.rati
-            ng}"
+            android:rating="@{movie.rating}"
             android:stepSize="1.0"
             app:layout_constraintBottom_toTopOf="@+id/title"
             app:layout_constraintStart_toStartOf="parent"
